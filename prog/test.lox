@@ -1,0 +1,8 @@
+if (a >= 456) {
+    var c = "hello world";
+    a = a + 100;
+}
+
+if (a == 20.14) {
+    val = a + 1;
+}

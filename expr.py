@@ -1,9 +1,6 @@
-import abc
-
-
-@abc
 class Expr:
-    pass
+    def accept(self, visitor):
+        visitor.visit(self)
 
 
 class Binary(Expr):

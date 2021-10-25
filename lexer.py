@@ -90,15 +90,15 @@ class Lexer:
             self.string()
         elif c == '\n':
             self.line += 1
-        elif c == '\r' or c == '\t':
+        elif c == '\r' or c == '\t' or c == ' ':
             pass
         else:
             if self.is_digit(c):
                 self.number()
             elif self.is_alpha(c):
                 self.identifier()
-
-            print('Unrecognized character: {}'.format(self.line))
+            else:
+                print('Unrecognized character: {char} at line:{line}'.format(char=c, line=self.line))
 
     def string(self):
         while self.peek() != '"':

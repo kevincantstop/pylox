@@ -1,4 +1,6 @@
+from __future__ import absolute_import
 from lexer import Lexer
+from parse import Parser
 import utils
 
 
@@ -9,4 +11,7 @@ class Lang:
 
     def exec(self):
         lexer = Lexer(self.code)
-        return lexer.tokenize()
+        tokens = lexer.tokenize()
+
+        p = Parser(tokens)
+        return p.parse()

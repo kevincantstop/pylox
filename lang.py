@@ -13,5 +13,7 @@ class Lang:
         lexer = Lexer(self.code)
         tokens = lexer.tokenize()
 
-        p = Parser(tokens)
-        return p.parse()
+        parser = Parser(tokens)
+        ast = parser.parse()
+
+        return ast
